@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from celery.schedules import crontab
+
 import os
 from pathlib import Path
 
@@ -136,9 +138,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #CELERY STUFF
 CELERY_BROKER_URL = "redis://redis:6379"
 CELERY_RESULT_BACKEND = "redis://redis:6379"
-
-from celery.schedules import crontab
-
 CELERY_BEAT_SCHEDULE = {
     "query_youtube_data_api": {
         "task": "search.tasks.query_youtube_data_api",
