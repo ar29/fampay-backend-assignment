@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'search.apps.SearchConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -135,4 +137,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CELERY_BROKER_URL = "redis://redis:6379"
 CELERY_RESULT_BACKEND = "redis://redis:6379"
 
+from celery.schedules import crontab
+
+CELERY_BEAT_SCHEDULE = {
+    "query_youtube_data_api": {
+        "task": "search.tasks.query_youtube_data_api",
+        "schedule": crontab(minute="*/1"),
+    },
+}
 
