@@ -1,0 +1,4 @@
+celery
+django
+google-api-python-client
+redis
