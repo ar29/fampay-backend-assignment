@@ -1,0 +1,5 @@
+celery
+django
+google-api-python-client
+psycopg2-binary
+redis
