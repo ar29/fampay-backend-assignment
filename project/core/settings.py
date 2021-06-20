@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from celery.schedules import crontab
+from datetime import timedelta
 
 import os
 from pathlib import Path
@@ -141,7 +141,7 @@ CELERY_RESULT_BACKEND = "redis://redis:6379"
 CELERY_BEAT_SCHEDULE = {
     "query_youtube_data_api": {
         "task": "search.tasks.query_youtube_data_api",
-        "schedule": crontab(minute="*/1"),
+        "schedule": timedelta(seconds=10),
     },
 }
 
