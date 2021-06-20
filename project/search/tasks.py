@@ -48,7 +48,7 @@ def youtube_search(developer_key):
     # Call the search.list method to retrieve results matching the specified
     # query term.
     search_response = youtube.search().list(
-        q='Google',
+        q='Cricket',
         part='id,snippet',
         maxResults=1000
     ).execute()
