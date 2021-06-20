@@ -53,9 +53,6 @@ def youtube_search(developer_key):
         maxResults=1000
     ).execute()
 
-
-    # Add each result to the appropriate list, and then display the lists of
-    # matching videos, channels, and playlists.
     for search_result in search_response.get('items', []):
         if search_result['id']['kind'] == 'youtube#video':
             video_id = search_result['id']['videoId']

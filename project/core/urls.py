@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from project.search import views
+from search import views
 
 router = routers.DefaultRouter()
 router.register(r'videos', views.VideoViewSet)
