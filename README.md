@@ -22,3 +22,7 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 # Setup and Test Instructions
 1. `docker-compose up -d --build `
 2. Visit `http://localhost:1337/videos` in the browser.
+3. `docker ps` for running containers.
+4. `docker-compose exec web python manage.py shell` for Django shell access.
+5. `docker-compose logs -f 'celery'` for checking Celery logs.
+6. `docker-compose exec db psql --username=hello_django --dbname=hello_django_dev` for checking Postgres DB.
