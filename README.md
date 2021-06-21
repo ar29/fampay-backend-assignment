@@ -8,7 +8,7 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 
 # Basic Requirements (Covered):
 
-- Server calls the YouTube API continuously in background (async) with an interval of 10 seconds for fetching the latest Cricket videos  and storse the data of videos (specifically these fields - Video title, description, publishing datetime, thumbnails URLs  in a database with proper indexes.
+- Server calls the YouTube API continuously in background (async) with an interval of 10 seconds for fetching the latest Cricket videos  and stores the data of videos (specifically these fields - Video title, description, publishing datetime, thumbnails URLs  in a database with proper indexes.
 - A GET API which returns the stored video data in a paginated response sorted in descending order of published datetime.
 - A basic search API to search the stored videos using their title and description.
 - Dockerized the project.
