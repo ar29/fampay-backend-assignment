@@ -22,8 +22,11 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 # Setup and Test Instructions
 1. `docker-compose up -d --build `
 2. a. Visit `http://localhost:1337/videos` in the browser.
-2. b. Click on the `Filter` button (in the top right) for search and sorting options.   
+2. b. Click on the `Filters` button (in the top right) for search and sorting options.   
 3. `docker ps` for running containers.
 4. `docker-compose exec web python manage.py shell` for Django shell access.
 5. `docker-compose logs -f 'celery'` for checking Celery logs.
 6. `docker-compose exec db psql --username=hello_django --dbname=hello_django_dev` for checking Postgres DB.
+
+# Note
+`.env.dev` is a environmental variable file that would NOT be stored in a GitHub repository, given a production setup/environment.
