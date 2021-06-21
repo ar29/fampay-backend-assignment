@@ -32,7 +32,6 @@ def query_youtube_data_api():
         try:
             youtube_search(developer_key)
         except HttpError as e:
-            print('An HTTP error %d occurred:\n%s' % (e.resp.status, e.content))
             if e.resp.status == 403:
                 continue
         else:
@@ -48,7 +47,7 @@ def youtube_search(developer_key):
     # Call the search.list method to retrieve results matching the specified
     # query term.
     search_response = youtube.search().list(
-        q='Cricket',
+        q=os.environ.get("SEARCH_TERM"),
         part='id,snippet',
         maxResults=1000
     ).execute()
